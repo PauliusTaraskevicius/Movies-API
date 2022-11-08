@@ -2,14 +2,13 @@ import axios from "axios";
 import { server } from "../config";
 import PopularMovie from "../components/movies/popularMovie";
 
-
-
 // https://www.themoviedb.org/settings/api
 
 export default function Home({ movies }) {
   return (
     <div>
       <h1>HOMEPAGE</h1>
+
       <PopularMovie movies={movies.results} />
     </div>
   );
