@@ -1,9 +1,14 @@
 import { Fragment } from "react";
+import Meta from "../Meta";
 
 function Layout(props) {
+  const { children } = props;
+
   return (
+
     <Fragment>
-      <main>{props.children}</main>
+      <Meta />
+      <main>{children}</main>
     </Fragment>
   );
 }
