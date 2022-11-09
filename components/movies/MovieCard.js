@@ -19,7 +19,7 @@ function MovieCard(props) {
     <div>
       <Meta title="Most popular movies" description="Most popular movies" />
       <div>
-        <Link href={`/movie/${id}`}>
+        <Link href={`/search/${id}`}>
           <h1>{title}</h1>
           <Image
             src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
@@ -32,5 +32,7 @@ function MovieCard(props) {
     </div>
   );
 }
+
+
 
 export default MovieCard;

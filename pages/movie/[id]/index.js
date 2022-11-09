@@ -36,7 +36,7 @@ function MovieDetails({ movie }) {
 export async function getStaticProps(context) {
   const { id } = context.params;
   const res = await axios(
-    `${server}/${id}?api_key=${process.env.MOVIE_DB_KEY}&language=en-US&page=1`
+    `${server}/${id}?api_key=${process.env.NEXT_PUBLIC_API_KEY}&language=en-US&page=1`
   );
 
   const movie = res.data;
@@ -48,7 +48,7 @@ export async function getStaticProps(context) {
 
 export async function getStaticPaths() {
   const res = await axios(
-    `${server}/popular?api_key=${process.env.MOVIE_DB_KEY}&language=en-US&page=1`
+    `${server}/popular?api_key=${process.env.NEXT_PUBLIC_API_KEY}&language=en-US&page=1`
   );
 
   const movies = res.data.results;
