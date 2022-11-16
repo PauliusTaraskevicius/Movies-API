@@ -2,11 +2,11 @@ import Image from "next/image";
 
 import axios from "axios";
 import { server } from "../../../config";
+import requests from "../../../utils/requests";
 
 import Meta from "../../../components/Meta";
 
 function MovieDetails({ movie }) {
-  console.log(movie);
   const { title, backdrop_path, overview, genres, release_date } = movie;
 
   return (
@@ -47,9 +47,7 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  const res = await axios(
-    `${server}/popular?api_key=${process.env.NEXT_PUBLIC_API_KEY}&language=en-US&page=1`
-  );
+  const res = await axios(`${server}${requests.fetchPopular.url}`);
 
   const movies = res.data.results;
 

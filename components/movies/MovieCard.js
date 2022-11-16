@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import Meta from "../Meta";
 
+
 function MovieCard(props) {
   const {
     id,
@@ -14,6 +15,7 @@ function MovieCard(props) {
     vote_average,
     vote_count,
   } = props.movie;
+
 
   return (
     <div>
@@ -32,7 +34,5 @@ function MovieCard(props) {
     </div>
   );
 }
-
-
 
 export default MovieCard;
