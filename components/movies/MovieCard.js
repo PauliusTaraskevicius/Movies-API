@@ -4,7 +4,7 @@ import Image from "next/image";
 import Meta from "../Meta";
 
 function MovieCard(props) {
-  const { id, title, overview, poster_path, vote_average } = props.movie;
+  const { id, title, original_name, overview, poster_path, vote_average } = props.movie;
 
   return (
     <div>
@@ -48,7 +48,7 @@ function MovieCard(props) {
         href="#"
         className="block text-base font-semibold leading-tight text-white hover:text-blue-400 mt-8"
       >
-        {title}
+        {!title ? original_name : title}
       </a>
       <div className="text-gray-400 mt-1">{vote_average}</div>
     </div>
