@@ -11,7 +11,7 @@ function SearchResults({ moviesSearched }) {
             {!moviesSearched
               ? ""
               : moviesSearched.map((movie) => (
-                  <div className="game mt-4">
+                  <div key={movie.id} className="game mt-4">
                     <MovieCard movie={movie} key={movie.id} />
                   </div>
                 ))}
