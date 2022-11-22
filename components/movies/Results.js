@@ -5,7 +5,7 @@ import MovieCard from "./MovieCard";
 function Results({ results }) {
   return (
     <div>
-      <main className="py-8">
+      <main>
         <div className="container mx-auto px-4">
           <div className="text-sm grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 xl:grid-cols-6 gap-8 pb-8 pt-4">
             {results.map((movie) => (

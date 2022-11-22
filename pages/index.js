@@ -6,9 +6,8 @@ import Results from "../components/movies/Results";
 // https://www.themoviedb.org/settings/api
 
 export default function Home({ results }) {
-
   return (
-    <div className="">
+    <div>
       <MovieSearch />
       <Results results={results} />
     </div>
@@ -30,15 +29,3 @@ export async function getServerSideProps(context) {
     },
   };
 }
-
-// export async function getStaticProps() {
-//   const res = await axios(`${server}${requests.fetchPopular.url}`);
-
-//   const movies = res.data;
-
-//   return {
-//     props: {
-//       movies,
-//     },
-//   };
-// }

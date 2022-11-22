@@ -9,9 +9,8 @@ function MovieCard(props) {
   return (
     <div>
       <Meta title="Most popular movies" description="Most popular movies" />
-
       <div className="relative inline-block hover:scale-105 ease-in duration-300">
-        <Link href={`/search/${id}`}>
+        <Link href={`/movie/${id}`}>
           {!poster_path ? (
             <Image
               className="block h-full w-full object-cover  cursor-pointer"
@@ -50,7 +49,11 @@ function MovieCard(props) {
       >
         {!title ? original_name : title}
       </a>
-      <div className="text-gray-400 mt-1">{vote_average}</div>
+      <div className="text-gray-400 mt-1">
+      <Link href={`/movie/${id}`}>
+        <p className="underline text-blue-400 ">Read more</p>
+      </Link>
+      </div>
     </div>
   );
 }
