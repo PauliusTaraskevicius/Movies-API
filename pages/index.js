@@ -16,16 +16,18 @@ export default function Home({ results }) {
 
 export async function getServerSideProps(context) {
   const category = context.query.category;
-
-  const request = await fetch(
-    `https://api.themoviedb.org/3${
-      requests[category]?.url || requests.fetchTrending.url
-    }`
-  ).then((res) => res.json());
-
-  return {
-    props: {
-      results: request.results,
-    },
-  };
+  try {
+    const request = await fetch(
+      `https://api.themoviedb.org/3${
+        requests[category]?.url || requests.fetchTrending.url
+      }`
+    ).then((res) => res.json());
+    return {
+      props: {
+        results: request.results,
+      },
+    };
+  } catch (err) {
+    console.error(err);
+  }
 }
